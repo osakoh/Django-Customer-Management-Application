@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block title %} | New Account {% endblock %}
+
+
+{% block content %}
+
+    <section id="register" class="bg-light py-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white text-center">
+                            <h4>
+                                <i class="fas fa-user-plus"></i> Register</h4>
+                        </div>
+                        <div class="card-body">
+
+                            <!-- Messages -->
+                            {% include '_partials/_messages.html' %}
+
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password1">Password</label>
+                                    <input type="password" name="password1" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password2">Confirm Password</label>
+                                    <input type="password" name="password2" class="form-control" required>
+                                </div>
+                                <input type="submit" value="Register" class="btn btn-outline-secondary btn-block">
+                                <div class="mt-3 text-center text-black-50">
+                                    <p>Already Registered? <a href="{% url 'login' %}">Sign In</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+<!-- Django form error
+<ul class="errorlist">
+    <li>password2
+        <ul class="errorlist">
+            <li>The two password fields didn&#39;t match.</li>
+        </ul>
+    </li>
+</ul>
+-->

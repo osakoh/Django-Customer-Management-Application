@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}| Settings {% endblock %}
+
+{% block content %}
+
+    <!-- Messages -->
+    {% include '_partials/_messages.html' %}
+
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-body">
+                <a href="{% url 'user_page' %}" class="btn btn-info">Dashboard <i class="fas fa-home"></i></a>
+                <hr>
+                <h3 class="text-center">Account Settings</h3>
+                <hr>
+                {% if request.user.customer.profile_picture %}
+                    <img src="{{ request.user.customer.profile_picture.url }}" alt="Profile Picture"
+                         class="profile_pic">
+
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card card-body">
+                <!-- enctype="multipart/form-data": used when form has files -->
+                <form action="" method="post" enctype="multipart/form-data">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-outline-secondary" name="Update Profile">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

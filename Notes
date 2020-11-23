@@ -1,0 +1,32 @@
+Two types of users
+- Customer
+- Admin
+
+On registration a new user is added to the 'customer' group.
+A user can only be added to the 'admin' group from the Django admin site.
+
+The admin and the customer have different dashboard.
+When a customer signs up via the registration page, the customer is redirected to the login page and is shown a success message.
+When a customer logs in, the customer is redirected to the customer dashboard, but when an admin logs in, the admin is redirected to the admin dashboard.
+
+Going to the registration page when logged in
+- if a customer tries to access the registration page via the url, the customer is automatically taken back to the customer's dashboard via the custom decorator.
+- if an admin tries to access the registration page via the url, the admin is automatically taken back to the admin' dashboard via the custom decorator.
+
+Going to the login page when logged in
+- if a customer tries to access the login page via the url, the customer is automatically taken back to the customer's dashboard via the custom decorator.
+- if an admin tries to access the login page via the url, the admin is automatically taken back to the admin' dashboard via the custom decorator.
+
+Pages only shown to the admin:
+admin dashboard, products, creating, updating, and deleting orders.
+A customer is denied access to any of these pages and is shown an unauthorised message.
+
+Pages only shown to the customer
+customer dashboard, customer's order, profile setting.
+An admin is denied access to any of the above pages and is shown an unauthorised message.
+
+Django signals
+post-save() signal is used to create a customer profile after the user is saved.
+A new user is added to the 'customer' group and a customer profile is created.
+
+On registration, a customer is given a default profile picture.

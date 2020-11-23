@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% load static %}
+
+{% block title %}| Dashboard{% endblock title %}
+
+{% block content %}
+    <!-- Message -->
+    {% include '_partials/_messages.html' %}
+
+    <!-- Status -->
+    {% include '_partials/_status.html' %}
+
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <h5>Customer</h5>
+                <hr>
+                <div class="card card-body">
+                    <a class="btn btn-outline-primary btn-sm btn-block" href="">Create Customer</a>
+
+                    {% if customers %}
+                        <table class="table table-sm">
+                            <tr>
+                                <th></th>
+                                <th>Customer</th>
+                                <th>Phone number</th>
+                            </tr>
+                            {% for customer in customers %}
+                                <tr>
+                                    <td><a class="btn btn-outline-info btn-sm btn-block"
+                                           href="{% url 'customer' customer.id %}">View</a></td>
+                                    <td>{{ customer.user.username.title}}</td>
+                                    <td>{{ customer.phone }}</td>
+
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    {% else %}
+                        <p class="text-center mt-3">Customer hasn't been added.</p>
+                    {% endif %}
+
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <h5>Previous orders</h5>
+                <hr>
+                <div class="card card-body">
+                    {#                    {% if customers %}#}
+                    {#                        <a class="btn btn-outline-secondary btn-sm btn-block" href="{% url 'create_order' %}">Create#}
+                    {#                            Order</a>#}
+                    {#                    {% else %}#}
+                    {#                        <a class="text-center text-danger" href="">Please create a customer first!</a>#}
+                    {#                    {% endif %}#}
+                    {% if orders %}
+                        <table class="table table-hover table-sm">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th>Product</th>
+                                <th>Date Ordered</th>
+                                <th>Status</th>
+                                <th>Update</th>
+                                <th>Remove</th>
+                            </tr>
+                            </thead>
+
+                            {% for order in orders %}
+                                <tbody>
+                                <tr>
+                                    <td>{{ order.product }}</td>
+                                    <td>{{ order.date_created|naturaltime }}</td>
+                                    <td>{{ order.status }}</td>
+                                    <td><a class="btn btn-outline-primary btn-sm btn-block"
+                                           href="{% url 'update_order' order.id %}">Update</a></td>
+                                    <td><a class="btn btn-outline-danger btn-sm btn-block"
+                                           href="{% url 'delete_order' order.id %}">Delete</a></td>
+                                </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
+                    {% else %}
+                        <p class="text-center mt-3">No order created yet.</p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+

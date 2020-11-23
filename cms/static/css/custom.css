@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color: #f8f9fa;
+}
+
+#logo {
+
+}
+
+#user_style {
+    font-weight: bold;
+    color: darkseagreen;
+}
+
+.colour {
+    background-color: #212529;
+}
+
+#total-orders {
+    background-color: #4cb4c7;
+}
+
+#orders-delivered {
+    background-color: #3a5a40;
+}
+
+#orders-pending {
+    background-color: #ffe66d;
+}
+
+/*  account_settings.html */
+.profile_pic {
+    max-height: 250px;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 40%;
+}
+

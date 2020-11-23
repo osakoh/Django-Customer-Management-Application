@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}| Delete-{{ item }} {% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <h5 class="p-2 font-weight-bold">Are you sure you want to delete <span
+                            class="text-danger">"{{ item }}"</span>?
+                    </h5>
+                    <form action="{% url 'delete_order' item.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Confirm" class="button btn-sm btn-outline-danger">
+                        <a href="{% url 'home' %}" class="button btn-sm btn-outline-info">Back to list</a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

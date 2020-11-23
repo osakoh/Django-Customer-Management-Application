@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% load bootstrap4 %}
+
+{% block title %}| form {% endblock title %}
+
+{% block content %}
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mr-3 col-6">
+                <div class="mr-3 card card-body">
+                    <form action="" method="post">
+                        {% if formset %}
+                            {{ formset.management_form }}
+                            {% bootstrap_formset formset layout='horizontal' %}
+                        {% else %}
+                            {#                            {{ order_form.as_p }}#}
+                            {% bootstrap_form order_form layout='horizontal' size='md' %}
+
+                        {% endif %}
+                        {% csrf_token %}
+                        <input type="submit" name="Submit" class="button btn-sm btn-outline-info">
+                        {#                        {% buttons submit='Submit' layout='inline' %}{% endbuttons %}#}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+{#{% extends 'base.html' %}#}
+{##}
+{#{% load static %}#}
+{##}
+{#{% block title %}| form {% endblock title %}#}
+{##}
+{#{% block content %}#}
+{#    <br>#}
+{#    <div class="container-fluid">#}
+{#        <div class="row">#}
+{#            <div class="mr-3 col-6">#}
+{#                <div class="mr-3 card card-body">#}
+{#                    <form action="" method="post">#}
+{#                        {{ formset.management_form }}#}
+{#                        {% for form in formset %}#}
+{#                            {{ form.as_p }}#}
+{#                            <hr>#}
+{#                        {% endfor %}#}
+{#                        {% csrf_token %}#}
+{#                        <input type="submit" name="Submit">#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{##}
+{#{% endblock %}#}
