@@ -1,7 +1,7 @@
 import os
 
 from django.contrib.messages import constants as messages  # import Django flash messages
-from django.core.mail import send_mail  #  Python provides a mail sending interface via the smtplib module
+#  Python provides a mail sending interface via the smtplib module
 
 from my_settings import Configure
 
@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = Configure.key
+SECRET_KEY = Configure.s_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -142,10 +142,11 @@ MESSAGE_TAGS = {
     messages.INFO: 'alert-info',
 }
 
+# smtp-config
+EMAIL_BACKEND = Configure.backend
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = EMAIL_PORT
-EMAIL_HOST_USER: EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD: EMAIL_HOST_PASSWORD
-EMAIL_USE_TLS: EMAIL_USE_TLS
+EMAIL_HOST = Configure.host
+EMAIL_PORT = Configure.port
+EMAIL_USE_TLS = Configure.uts
+EMAIL_HOST_USER = Configure.use
+EMAIL_HOST_PASSWORD = Configure.pwd

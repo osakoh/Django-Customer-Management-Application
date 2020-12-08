@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django import forms
 
 from .models import Order, Customer
 
@@ -26,3 +27,10 @@ class CustomerForm(ModelForm):
         model = Customer
         fields = '__all__'
         exclude = ['user']
+
+
+# class EmailPostForm(forms.Form):
+#     name = forms.CharField(max_length=25)
+#     email = forms.EmailField()
+#     to = forms.EmailField()
+#     comments = forms.CharField(required=False, widget=forms.Textarea)

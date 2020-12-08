@@ -9,6 +9,7 @@ from .models import *
 from .forms import OrderModelForm, CreateUserForm, CustomerForm
 from .filters import OrderFilter
 from .decorators import unauthenticated_user, allowed_users, admin_only
+from django.core.mail import send_mail
 
 
 # classes for the url pattern
@@ -220,6 +221,7 @@ def account_settings(request):
 
     context = {'form': form}
     return render(request, 'accounts/account_settings.html', context)
+
 
 
 """
