@@ -32,3 +32,9 @@ A new user is added to the 'customer' group and a customer profile is created.
 On registration, a customer is given a default profile picture.
 
 This application stores customers information in a database (PostgreSQL).
+
+Fixtures:
+Used to load and dump data from the database into files (JSON,XML/YAML). That is, to pre-populate the database
+with hardcoded data.
+Useful for automatically including initial data in the project setup, instead of
+having to add it manually.
