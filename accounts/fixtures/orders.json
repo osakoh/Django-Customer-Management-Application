@@ -1,0 +1,271 @@
+[
+{
+  "model": "accounts.customer",
+  "pk": 4,
+  "fields": {
+    "user": 13,
+    "name": "Ann",
+    "phone": "000-111-22",
+    "email": "a@a.com",
+    "profile_picture": "profile-picture_kMkwpuX.png",
+    "date_created": "2020-11-16T19:50:14.297Z"
+  }
+},
+{
+  "model": "accounts.customer",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "name": "Osas",
+    "phone": "00-11-111",
+    "email": "macmive@gmail.com",
+    "profile_picture": "photo_org.jpg",
+    "date_created": "2020-11-19T19:53:06.314Z"
+  }
+},
+{
+  "model": "accounts.customer",
+  "pk": 29,
+  "fields": {
+    "user": 44,
+    "name": "osa",
+    "phone": "123321",
+    "email": "os@s.com",
+    "profile_picture": "city-buildings-png-transparent-images-clipart-icons-pngriver-download-free-city-building_5nMbRhG.png",
+    "date_created": "2020-11-22T20:03:40.488Z"
+  }
+},
+{
+  "model": "accounts.tag",
+  "pk": 1,
+  "fields": {
+    "name": "Sports"
+  }
+},
+{
+  "model": "accounts.tag",
+  "pk": 2,
+  "fields": {
+    "name": "Summer"
+  }
+},
+{
+  "model": "accounts.tag",
+  "pk": 3,
+  "fields": {
+    "name": "Kitchen"
+  }
+},
+{
+  "model": "accounts.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Fun"
+  }
+},
+{
+  "model": "accounts.product",
+  "pk": 2,
+  "fields": {
+    "name": "Table",
+    "price": "50.50",
+    "category": "Indoor",
+    "description": "For outdoor activities.",
+    "date_created": "2020-11-14T23:28:16.654Z",
+    "tags": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "accounts.product",
+  "pk": 3,
+  "fields": {
+    "name": "Piano",
+    "price": "250.99",
+    "category": "Indoor",
+    "description": "For personal musical practice.",
+    "date_created": "2020-11-14T23:28:50.953Z",
+    "tags": [
+      4
+    ]
+  }
+},
+{
+  "model": "accounts.product",
+  "pk": 4,
+  "fields": {
+    "name": "Basketball",
+    "price": "25.24",
+    "category": "Outdoor",
+    "description": "Used of sport activities",
+    "date_created": "2020-11-14T23:29:21.383Z",
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "accounts.product",
+  "pk": 5,
+  "fields": {
+    "name": "BBQ Grill",
+    "price": "230.40",
+    "category": "Outdoor",
+    "description": "Used during summer",
+    "date_created": "2020-11-15T00:43:11.180Z",
+    "tags": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "accounts.product",
+  "pk": 6,
+  "fields": {
+    "name": "Plates",
+    "price": "12.50",
+    "category": "Indoor",
+    "description": "",
+    "date_created": "2020-11-15T00:45:24.443Z",
+    "tags": [
+      3
+    ]
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 107,
+  "fields": {
+    "customer": null,
+    "product": 2,
+    "date_created": "2020-11-19T20:37:56.705Z",
+    "status": "Pending",
+    "note": "ds"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 108,
+  "fields": {
+    "customer": 4,
+    "product": 2,
+    "date_created": "2020-11-19T20:49:51.602Z",
+    "status": "Delivered",
+    "note": "Note here"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 109,
+  "fields": {
+    "customer": null,
+    "product": 4,
+    "date_created": "2020-11-19T20:50:10.459Z",
+    "status": "Delivered",
+    "note": "Here"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 110,
+  "fields": {
+    "customer": 4,
+    "product": 2,
+    "date_created": "2020-11-20T12:38:26.422Z",
+    "status": "Pending",
+    "note": "Hello"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 111,
+  "fields": {
+    "customer": null,
+    "product": 2,
+    "date_created": "2020-11-20T12:39:05.421Z",
+    "status": "Out for delivery",
+    "note": "First"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 112,
+  "fields": {
+    "customer": null,
+    "product": 4,
+    "date_created": "2020-11-20T12:39:05.423Z",
+    "status": "Delivered",
+    "note": "Thanks"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 113,
+  "fields": {
+    "customer": null,
+    "product": 5,
+    "date_created": "2020-11-20T12:39:05.426Z",
+    "status": "Pending",
+    "note": "Please call on arrival!"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 114,
+  "fields": {
+    "customer": 4,
+    "product": 3,
+    "date_created": "2020-11-20T18:20:31.363Z",
+    "status": "Delivered",
+    "note": "Now"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 115,
+  "fields": {
+    "customer": null,
+    "product": 6,
+    "date_created": "2020-11-20T19:15:03.015Z",
+    "status": "Out for delivery",
+    "note": "First order"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 116,
+  "fields": {
+    "customer": null,
+    "product": 5,
+    "date_created": "2020-11-20T19:15:03.017Z",
+    "status": "Pending",
+    "note": "Nice"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 117,
+  "fields": {
+    "customer": null,
+    "product": 3,
+    "date_created": "2020-11-20T19:15:03.019Z",
+    "status": "Pending",
+    "note": "Still waiting"
+  }
+},
+{
+  "model": "accounts.order",
+  "pk": 118,
+  "fields": {
+    "customer": 4,
+    "product": 4,
+    "date_created": "2020-11-22T14:06:21.731Z",
+    "status": "Pending",
+    "note": "Hello world"
+  }
+}
+]
